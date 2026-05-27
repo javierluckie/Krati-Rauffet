@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Krati Rauffet | Digital Business Card</title>
+
+  <style>
+    :root{
+      --fives-primary:#c1007a;
+      --fives-secondary:#8a0058;
+      --fives-accent:#e1008c;
+      --text:#1f2430;
+      --muted:#667085;
+      --bg:#f4f6f8;
+      --card:#ffffff;
+      --line:#e7e9ee;
+      --shadow:0 18px 45px rgba(40,17,34,0.16);
+    }
+
+    *{box-sizing:border-box}
+
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top right, rgba(225,0,140,.16), transparent 28%),
+        linear-gradient(180deg, #fafbfd 0%, #f2f4f7 100%);
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:28px 16px;
+    }
+
+    .shell{
+      width:100%;
+      max-width:460px;
+    }
+
+    .topband{
+      height:116px;
+      border-radius:28px 28px 0 0;
+      background:linear-gradient(135deg, var(--fives-primary), var(--fives-secondary), #5f003d);
+      box-shadow:var(--shadow);
+    }
+
+    .card{
+      background:var(--card);
+      border-radius:0 0 28px 28px;
+      box-shadow:var(--shadow);
+      padding:0 22px 24px;
+      border:1px solid rgba(193,0,122,.08);
+    }
+
+    .identity{
+      margin-top:-54px;
+      text-align:center;
+      position:relative;
+      z-index:2;
+    }
+
+    .photo-wrap{
+      width:116px;
+      height:116px;
+      margin:0 auto 14px;
+      padding:4px;
+      border-radius:50%;
+      background:linear-gradient(135deg, #ffffff, #f5d3e8);
+      box-shadow:0 12px 24px rgba(94,0,61,.18);
+    }
+
+    .photo{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      border-radius:50%;
+      display:block;
+    }
+
+    .logo{
+      width:120px;
+      max-width:52%;
+      height:auto;
+      margin:6px auto 14px;
+      display:block;
+    }
+
+    h1{
+      margin:0;
+      font-size:1.65rem;
+      line-height:1.15;
+      font-weight:800;
+    }
+
+    .title{
+      margin:8px 0 4px;
+      color:var(--fives-secondary);
+      font-weight:700;
+    }
+
+    .company{
+      margin:0;
+      color:var(--muted);
+      font-weight:600;
+    }
+
+    .location{
+      margin:14px auto 0;
+      display:inline-flex;
+      padding:8px 14px;
+      border-radius:999px;
+      background:#f7f1f5;
+      color:#5d4454;
+      font-weight:600;
+    }
+
+    .actions{
+      margin:22px 0 18px;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+    }
+
+    .btn{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:52px;
+      border-radius:16px;
+      text-decoration:none;
+      font-weight:800;
+      font-size:.96rem;
+    }
+
+    .btn-primary{
+      color:white;
+      background:linear-gradient(135deg, var(--fives-accent), var(--fives-primary), var(--fives-secondary));
+      box-shadow:0 10px 20px rgba(138,0,88,.22);
+    }
+
+    .btn-secondary{
+      color:var(--fives-secondary);
+      background:white;
+      border:1px solid rgba(193,0,122,.16);
+      box-shadow:0 8px 18px rgba(31,36,48,.06);
+    }
+
+    .section{
+      border-top:1px solid var(--line);
+      padding-top:18px;
+    }
+
+    .item{
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+      padding:14px;
+      border-radius:18px;
+      background:#fbfbfc;
+      border:1px solid #eef0f3;
+      margin-bottom:12px;
+    }
+
+    .icon{
+      width:38px;
+      height:38px;
+      border-radius:12px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:linear-gradient(135deg, rgba(225,0,140,.12), rgba(138,0,88,.10));
+      color:var(--fives-secondary);
+      font-weight:800;
+    }
+
+    .label{
+      margin:0 0 2px;
+      font-size:.78rem;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      color:#8a8f99;
+      font-weight:800;
+    }
+
+    .value{
+      margin:0;
+      font-weight:700;
+      word-break:break-word;
+    }
+
+    .value a{
+      color:var(--text);
+      text-decoration:none;
+    }
+
+    .footer{
+      margin-top:18px;
+      text-align:center;
+      color:#8a8f99;
+      font-size:.8rem;
+    }
+
+    @media(max-width:420px){
+      .actions{grid-template-columns:1fr}
+      h1{font-size:1.45rem}
+    }
+  </style>
+</head>
+
+<body>
+  <main class="shell">
+    <div class="topband"></div>
+
+    <section class="card">
+      <div class="identity">
+        <div class="photo-wrap">
+          <img src="profile.jpg" alt="FULL NAME" class="photo" />
+        </div>
+
+        <img src="fives-logo.png" alt="Fives Group logo" class="logo" />
+
+        <h1>Krati Rauffet</h1>
+        <p class="title">Business Development Director</p>
+        <p class="company">Fives Maintenance</p>
+        <div class="location">📍 Montévrain/France</div>
+      </div>
+
+      <div class="actions">
+        <a class="btn btn-primary" href="tel:+33642416033">📞 Call</a>
+        <a class="btn btn-secondary" href="mailto:krati.rauffet@fivesgroup.com">✉️ Email</a>
+        <a class="btn btn-secondary" href="contact.vcf" download>💾 Save Contact</a>
+        <a class="btn btn-primary" href="https://www.linkedin.com/in/krati-r-600588b8/" target="_blank">🔗 LinkedIn</a>
+      </div>
+
+      <div class="section">
+        <div class="item">
+          <div class="icon">📱</div>
+          <div>
+            <p class="label">Mobile</p>
+            <p class="value"><a href="tel:+33642416033">+33 642416033</a></p>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="icon">✉</div>
+          <div>
+            <p class="label">Email</p>
+            <p class="value"><a href="mailto:krati.rauffet@fivesgroup.com">krati.rauffet@fivesgroup.com</a></p>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="icon">🌐</div>
+          <div>
+            <p class="label">Company Website</p>
+            <p class="value"><a href="https://www.fivesgroup.com/" target="_blank">www.fivesgroup.com</a></p>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="icon">in</div>
+          <div>
+            <p class="label">LinkedIn</p>
+            <p class="value"><a href="https://www.linkedin.com/in/krati-r-600588b8/" target="_blank">View Profile</a></p>
+          </div>
+        </div>
+      </div>
+
+      <p class="footer">Scan, connect, and save contact instantly.</p>
+    </section>
+  </main>
+</body>
+</html>
